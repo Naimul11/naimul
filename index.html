@@ -1,92 +1,112 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-        scroll snap
-        </title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-       hr{ 
-        height:1px;
-        background-color:black;
-        }
-.x.content {
-  display: flex;
-  overflow:auto;  /*important*/ 
-  border: 4px solid hotpink;
-  width: 100%;
-  height: 150px;
-   flex-flow: row;
-  scroll-snap-type: x mandatory;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Profile card component</title>
 
-.y.content {
-  overflow:auto;  /*important*/ 
-  border: 4px solid orange;
-  width: 100%;
-  height: 150px;
-  scroll-snap-type: y proximity;
+ 
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    *{
+      color: hsl(229, 23%, 23%);
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+body{
+  background:hsl(185, 75%, 39%);
+  background-image: url(./images/bg-pattern-top.svg),
+  url(./images/bg-pattern-bottom.svg) ;
+  background-position:-100% 160%, 170% -100% ;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: grid;
+  height: 95vh;
+  justify-content: center;
+  align-content: center;
 }
+.main{
+  width: 350px;
+  background:white;
+  border-radius:1em;
+  overflow: hidden;
+ }
 
-.box > div {
-  scroll-snap-stop: always;
-  scroll-snap-align: center;
+.main .profile{
+  position: relative;
+  left: 124px;
+  top: -53px;
+  border-radius: 50%;
+  
+}
+b{ 
+  position: relative;
+  top: -15px;
+  left: -5px;
+  font-size: 25px;
+}
+strong{
+  position: relative;
+  top: -15px;
+  color:hsl(227, 10%, 46%);
+  font-size: 22px;
+  font-weight: normal;
+  
+}
+.stats{
+  position: relative;
+  left: 135px;
+  line-height: 45px;
+  
+}
+.data{
+  font-size: 22px;
+  display: grid;
+  grid-auto-flow: column;
+  margin: 30px;
+}
+.data>div{
   text-align: center;
-  line-height: 150px;
-  font-size: 64px;
-  width: 100%;
-  height: 150px;
-  flex:none;       /* so important*/
+ font-weight: bold;
 }
+small{
+  font-weight: normal;
+  color: hsl(227, 10%, 46%);
+  font-size: 18px;
+  padding: 5px;
+  
+}
+ </style>
+</head>
+<body>
+  <div class="main">
+    <img src="./images/bg-pattern-card.svg" alt="bg" class="bg">
+    <img src="./images/image-victor.jpg" alt="pic"class="profile">
+    <b>Victor Crest
+      </b>
+      <strong> 26</strong> <br>
+    <strong class="stats"> London</strong> <br>
+  <hr>
+  <div class="data">
+   <div> 80K
+    <small>Followers</small></div>
+  
+   <div> 803K
+   <small>Likes</small> </div>
+  
+   <div> 1.4K
+   <small> Photos</small></div>
+  </div>
+  </div>
 
-.content > div:nth-child(even) {
-  background-color: #4c95fa;
-}
-
-.content> div:nth-child(odd) {
-  background-color: #f77f92;
-}
-.content > div:first-child {
-  background-color: #00ffa9;
-}
-        
-        </style>
-    </head>
-    <body>
-    	<div class="box x content">
-  <div>Mandatory</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>
-  <div>7</div>
-  <div>8</div>
-  <div>9</div>
-  <div>10</div>
-  <div>11</div>
-  <div>12</div>
-  <div>13</div>
-  <div>14</div>
-  <div>15</div>
-</div>
-<hr>
-   	<div class="box y content">
-  <div>proximity</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>
-  <div>7</div>
-  <div>8</div>
-  <div>9</div>
-  <div>10</div>
-  <div>11</div>
-  <div>12</div>
-  <div>13</div>
-  <div>14</div>
-  <div>15</div>
-</div>
-    </body>
+  <!-- <div class="attribution"> 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>. -->
+  </div> 
+</body>
 </html>
